@@ -36,7 +36,7 @@ export default {
   // 方法集合
   methods: {
     sendToFather() {
-      this.$emit("getSonData",this.value)
+      this.$emit("getSonData",this.value);
     }
   }
 }

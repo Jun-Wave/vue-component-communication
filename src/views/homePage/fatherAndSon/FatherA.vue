@@ -7,15 +7,15 @@
     <br />
     <br />
     <div class="get-data-box">
-      <h3>1. 某个时间点击子组件-->子组件中获取父组件数据(使用this.$parent)</h3>
+      <h3>1. 某个时间点击子组件-->子组件中获取父组件数据(子组件使用this.$parent)</h3>
       <get-father-data></get-father-data>
     </div>
     <br />
     <br />
     <div>
       <h3>1. 父组件方法触发 --> 将值传递到子组件(使用this.$ref)</h3>
-      <button @click="giveFatherData">点击我将值传个子组件</button>
-      <give-father-data ref="give_son"></give-father-data>
+      <button @click="giveFatherData">点击我,将值传个子组件</button>
+      <send-msg-to-son ref="give_son"></send-msg-to-son>
     </div>
 
     <br />
@@ -26,9 +26,10 @@
     </div>
     <br />
     <br />
-    <button @click="sonbExecute">我是父组件的按钮,点击我执行子组件方法</button>
+    
     <div class="son-b-box">
-      <h3>3. 父组件方法触发-->导致-->子组件方法触发(使用this.$ref)</h3>
+      <h3>3. 父组件方法触发-->导致-->子组件方法触发(使用this.$ref.son.value)</h3>
+      <button @click="sonbExecute">我是父组件的按钮,点击我执行子组件方法</button>
       <son-b ref="son_b" />
     </div>
     <br />
@@ -43,7 +44,7 @@
     </div>
 
     <div>
-      <h3>4. 父组件方法触发-->(父组件获取子组件的值)【(使用this.$ref)】</h3>
+      <h3>4. 父组件方法触发-->(父组件获取子组件的值)【(父组件内使用this.$ref.son.value)】</h3>
       <div>跟父组件方法触发 --> 将值传递到子组件类似</div>
     </div>
   </div>
@@ -52,7 +53,7 @@
 <script>
 import SonA from "./childComps/SonA";
 import GetFatherData from "./childComps/GetFatherData"
-import GiveFatherData from "./childComps/GiveFatherData"
+import SendMsgToSon from "./childComps/SendMsgToSon"
 import SonB from "./childComps/SonB";
 import ReturnTop from "./childComps/ReturnTop";
 import SonToFather from "./childComps/SonToFather";
@@ -61,7 +62,7 @@ export default {
   components: {
     SonA,
     GetFatherData,
-    GiveFatherData,
+    SendMsgToSon,
     SonB,
     ReturnTop,
     SonToFather
