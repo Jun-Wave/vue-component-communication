@@ -29,6 +29,7 @@ export default {
   // 生命周期 - 挂载完成（可以访问DOM元素）
   mounted () {
     this.$bus.$on("clickBorther2",(value)=> {
+      console.log(typeof value);
       this.printMessage(value);
     });
   },

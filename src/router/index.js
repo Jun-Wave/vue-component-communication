@@ -24,6 +24,11 @@ const routes = [
     name: 'Ancestor',
     component: () => import( '@/views/homePage/ancestorAndGrandson/Ancestor.vue')
   },
+  {
+    path: '/emit',
+    name: 'FatherEmit',
+    component: () => import( '@/views/homePage/emit/FatherEmit.vue')
+  }
 ]
 
 const router = new VueRouter({

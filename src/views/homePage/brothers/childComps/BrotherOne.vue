@@ -49,7 +49,8 @@ export default {
       this.$parent.$refs.borther_b.printMessage("使用$parent.$refs");
     },
     clickBortherMethodByBus() {
-      this.$bus.$emit("clickBorther2","使用事件总线");
+      let data = 1;
+      this.$bus.$emit("clickBorther2",data);
     }
   }
 }
